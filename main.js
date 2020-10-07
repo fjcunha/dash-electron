@@ -21,10 +21,11 @@ function createWindow() {
    if (externalDisplay) {
       win = new BrowserWindow({
          x: externalDisplay.bounds.x + 50,
-         y: externalDisplay.bounds.y + 50
+         y: externalDisplay.bounds.y + 50,
+         fullscreen:true
       })
 
-      win2 = new BrowserWindow({width: 2600, height: 600})
+      win2 = new BrowserWindow({fullscreen:true})
       win2.loadURL(url.format ({
          pathname: path.join(__dirname, 'index.html'),
          protocol: 'file:',

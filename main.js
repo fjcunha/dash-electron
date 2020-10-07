@@ -22,10 +22,12 @@ function createWindow() {
       win = new BrowserWindow({
          x: externalDisplay.bounds.x + 50,
          y: externalDisplay.bounds.y + 50,
-         fullscreen:true
+         fullscreen:true,
+         frame: false
       })
+      win2 = new BrowserWindow({fullscreen:true,frame: false})
 
-      win2 = new BrowserWindow({fullscreen:true})
+
       win2.loadURL(url.format ({
          pathname: path.join(__dirname, 'index.html'),
          protocol: 'file:',
@@ -33,7 +35,7 @@ function createWindow() {
       }))
 
       win.loadURL(url.format ({
-         pathname: path.join(__dirname, 'index.html'),
+         pathname: path.join(__dirname, 'country-dash.html'),
          protocol: 'file:',
          slashes: true
       }))
